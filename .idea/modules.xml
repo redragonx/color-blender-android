@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/color-blender-android.iml" filepath="$PROJECT_DIR$/color-blender-android.iml" />
+      <module fileurl="file://$USER_HOME$/DataMain/srcode/AndroidStudioProjects/color-blender-android/app/app.iml" filepath="$USER_HOME$/DataMain/srcode/AndroidStudioProjects/color-blender-android/app/app.iml" />
+      <module fileurl="file://$USER_HOME$/DataMain/srcode/AndroidStudioProjects/color-blender-android/color-blender-android.iml" filepath="$USER_HOME$/DataMain/srcode/AndroidStudioProjects/color-blender-android/color-blender-android.iml" />
     </modules>
   </component>
 </project>

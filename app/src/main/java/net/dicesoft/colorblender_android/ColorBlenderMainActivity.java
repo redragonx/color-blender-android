@@ -17,6 +17,10 @@ public class ColorBlenderMainActivity extends AppCompatActivity implements SeekB
 
     private View colorView;
     private View colorView2;
+
+    private View previewColor1View;
+    private View previewColor2View;
+
     SeekBar colorBlenderSeekbar;
 
     // custom intent request codes
@@ -32,8 +36,10 @@ public class ColorBlenderMainActivity extends AppCompatActivity implements SeekB
         setContentView(R.layout.activity_color_blender_main);
 
         colorView = findViewById(R.id.colorView);
-
         colorView2 = findViewById(R.id.colorView2);
+
+        previewColor1View = findViewById(R.id.preview1);
+        previewColor2View = findViewById(R.id.preview2);
 
         colorBlenderSeekbar = (SeekBar) findViewById(R.id.seekbar_colorblender);
         colorBlenderSeekbar.setOnSeekBarChangeListener(this);
@@ -95,6 +101,7 @@ public class ColorBlenderMainActivity extends AppCompatActivity implements SeekB
                 colorView = findViewById(R.id.colorView);
 
                 colorView.setBackgroundColor(color1);
+                previewColor1View.setBackgroundColor(color1);
             }
         } else if (requestCode == SECOND_COLOR) {
 
@@ -107,45 +114,22 @@ public class ColorBlenderMainActivity extends AppCompatActivity implements SeekB
                 colorView2 = findViewById(R.id.colorView2);
 
                 colorView2.setBackgroundColor(color2);
+                previewColor2View.setBackgroundColor(color2);
             }
         }
 
 
     }
 
-    public int mixColors(int col1, int col2, int ratio) {
-        int r1, g1, b1, r2, g2, b2;
-
-        r1 = Color.red(col1);
-        g1 = Color.green(col1);
-        b1 = Color.blue(col1);
-
-        r2 = Color.red(col2);
-        g2 = Color.green(col2);
-        b2 = Color.blue(col2);
-
-        int r3 = ratio* (r1 + r2);
-        int g3 = ratio * (g1 + g2);
-        int b3 = ratio * (b1 + b2);
-
-        return Color.rgb(r3/2, g3/2, b3/2);
-    }
-
-    public int clipNumber(int number, int min,int max) {
-        return Math.max(min, Math.min(number, max));
-    }
-
     @Override
     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
 
-        int newColor = 0;
-
         if (seekBar.getId() == R.id.seekbar_colorblender) {
-            newColor = mixColors(color1, color2, progress / 100);
+            colorView2.setAlpha((float) progress / 255);
         }
 //        newColor
       //  colorView.setBackgroundColor(newColor);
-        colorView2.setAlpha((float) progress/255);
+
     }
 
 
