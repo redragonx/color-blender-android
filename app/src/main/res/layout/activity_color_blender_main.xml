@@ -14,6 +14,13 @@
         android:layout_above="@+id/btn_pickcolor1" />
 
 
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/colorView2"
+        android:layout_weight=".8"
+        android:layout_above="@+id/btn_pickcolor1" />
+
     <Button
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
@@ -41,6 +48,7 @@
         android:text="Pick Color 2"
         android:id="@+id/btn_pickcolor2"
         android:layout_alignTop="@+id/btn_pickcolor1"
+        android:onClick="colorSelect1"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
